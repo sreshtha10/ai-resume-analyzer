@@ -18,19 +18,19 @@ export default function Home() {
                   <h1>Track Your Resume Ratings</h1>
                   <h2>Review Your AI-powered Feedback</h2>
               </div>
-          </section>
 
-          {resumes.length > 0 && (
-              <div className="resume-section">
-                  {
-                      resumes.map((resume) => (
-                          <div>
-                              <ResumeCard key={resume.id} resume={resume}/>
-                          </div>
-                      ))
-                  }
-              </div>
-          ) }
+              {resumes.length > 0 && (
+                  <div className="resume-section">
+                      {
+                          resumes.map((resume) => (
+                              <div>
+                                  <ResumeCard key={resume.id} resume={resume}/>
+                              </div>
+                          ))
+                      }
+                  </div>
+              ) }
+          </section>
 
       </main>;
 }
