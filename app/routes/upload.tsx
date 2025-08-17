@@ -6,7 +6,11 @@ const Upload = () => {
 
     const [isProcessing, setIsProcessing] = React.useState(false);
     const [statusText, setStatusText] = React.useState("");
+    const [file, setFile] = React.useState<File | null>(null);
 
+    const handleFileSelect = (file: File | null) => {
+        setFile(file);
+    }
 
     const handleSubmit = (event:FormEvent<HTMLFormElement>) => {
 
@@ -41,7 +45,7 @@ const Upload = () => {
                             </div>
                             <div className="form-div">
                                 <label htmlFor="uploader">Upload Resume</label>
-                                <FileUploader/>
+                                <FileUploader onFileSelect={handleFileSelect} />
                             </div>
 
                             <button type="submit" className="primary-button">Analyze Resume</button>
